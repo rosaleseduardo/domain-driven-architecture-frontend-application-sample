@@ -1,0 +1,70 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "3. How to Efficiently Handle Imports and Exports",
+  "steps": [
+    {
+      "title": "Introduction",
+      "description": "Before moving on to the next step, take some time to read about the [Module Pattern](https://www.patterns.dev/vanilla/module-pattern/), as the sample is based on it."
+    },
+    {
+      "file": "src/core/infrastructure/presenters/hooks/index.ts",
+      "description": "Each module should export all available resources using an object named after the containing folder.",
+      "line": 6,
+      "title": "Standardized Resource Export via Folder-Named Objects"
+    },
+    {
+      "file": "src/entities/counter/application/adapters/index.ts",
+      "description": "Maintaining a consistent pattern throughout the project.",
+      "line": 6,
+      "title": "Maintaining a consistent pattern throughout the project."
+    },
+    {
+      "file": "src/entities/counter/application/use-cases/index.ts",
+      "description": "This is another sample when exporting resources from a module.",
+      "line": 10,
+      "title": "Example of Exporting Resources from a Module"
+    },
+    {
+      "file": "src/entities/counter/infrastructure/implementations/index.ts",
+      "description": "The goal is to create a structure that is easy to understand/emulate by consistently repeating patterns.",
+      "line": 8,
+      "title": "Ensuring Easy-to-Understand Structure Through Pattern Repetition"
+    },
+    {
+      "file": "src/entities/counter/infrastructure/presenters/view-models/viewModel.ts",
+      "description": "If a file contains only one resource, use a default export.",
+      "line": 66,
+      "title": "Using Default Export for Single Resource Files"
+    },
+    {
+      "file": "src/entities/counter/infrastructure/presenters/view-models/index.ts",
+      "description": "When using a default export, assign an alias to the resource.",
+      "line": 2,
+      "title": "When using a default export, assign an alias to the resource."
+    },
+    {
+      "file": "src/entities/counter/application/index.ts",
+      "description": "As you can see, all the main layers should be structured as modules, and they must also export their internal directories, which are modules themselves.",
+      "line": 3,
+      "title": "Modular Structure: Exporting Layers and Internal Directories"
+    },
+    {
+      "file": "src/entities/counter/domain/index.ts",
+      "description": "In this layer, it's necessary to assign an alias to the interfaces module to maintain consistency with the previously established pattern.",
+      "line": 3,
+      "title": "Assigning Aliases for Consistency in Interface Modules"
+    },
+    {
+      "file": "src/entities/counter/application/use-cases/decrement-value/decrementValue.ts",
+      "description": "Consider the following guidelines:\n\n- Use relative paths to access resources within the same module.\n- For resources outside the module, use aliases, such as @core/domain.\n\n**Important: Imports are only permitted from the three main layers (as described in the initial code tour).**",
+      "line": 3,
+      "title": "Import Guidelines: Relative Paths and Aliases"
+    },
+    {
+      "file": "src/entities/counter/application/use-cases/get-initial-value/getInitialValue.ts",
+      "description": "Observe the consistent pattern for importing resources in this example.\n\n_**Note:** In this project, each entity is designed to have the same set of layers, with consistent naming conventions and resources. Due to this uniform structure, you may often find yourself importing identical resources from different entities in various files. To streamline this process and avoid confusion, it's recommended to set up aliases for these imports, as demonstrated in the following example._",
+      "line": 4,
+      "title": "Consistent Import Patterns in Resource Management"
+    }
+  ]
+}
