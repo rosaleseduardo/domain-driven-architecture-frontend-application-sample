@@ -7,11 +7,12 @@
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react-jsx",
+    "types": ["vitest/globals"],
 
     /* Modules */
     "baseUrl": "./src",
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "paths": {
       "@core/*": ["core/*"],
